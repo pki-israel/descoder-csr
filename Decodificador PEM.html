@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decodificador de CSR</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header><div class="inner">
+  <h1>Decodificador CSR</h1>
+
+</div></header>
+<main>
+  <p class="hint">Cole abaixo um ou mais blocos PEM (<span class="mono">-----BEGIN ...-----</span>), base64 puro ou hex,
+  ou arraste um arquivo <span class="mono">.csr</span> / <span class="mono">.pem</span> / <span class="mono">.key</span> /
+  <span class="mono">.cer</span> / <span class="mono">.crt</span> / <span class="mono">.p7b</span> (PEM ou DER bin&aacute;rio) para esta p&aacute;gina.</p>
+  <textarea id="input" spellcheck="false" placeholder="-----BEGIN CERTIFICATE REQUEST-----&#10;MIIC...&#10;-----END CERTIFICATE REQUEST-----"></textarea>
+  <div class="toolbar">
+    <button class="primary" id="btn-decode">Decodificar</button>
+    <button id="btn-clear">Limpar</button>
+    <button id="btn-example">Carregar exemplo</button>
+    <label class="filebtn">Abrir arquivo<input type="file" id="file" multiple style="display:none"></label>
+
+  </div>
+  <div id="results"></div>
+</main>
+<footer>
+
+</footer>
+<script src="nucleo.js"></script>
+<script src="interface.js"></script>
+</body>
+</html>

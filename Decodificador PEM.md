@@ -1,14 +1,4 @@
----
-title: Decodificador PEM - CSR, Certificados e Chaves
-created: 2026-07-17
-updated: 2026-07-17
-area: pki
-type: referencia
-status: ativo
-tags: [pki, ssl, type/referencia]
-related: []
-source: Sessao Claude 2026-07-17 - pedido do Israel para decodificador local de CSR
----
+
 
 # Decodificador PEM - CSR, Certificados e Chaves
 
@@ -17,16 +7,7 @@ para a internet. Substitui sites como certlogik/sslshopper decoder, com a
 vantagem de poder colar ate chave privada com seguranca (tudo roda no
 navegador, sem backend).
 
-## Onde esta
 
-```
-6 - Obsidian-Claude-Vault/Automações/Decodificador PEM/
-├── Decodificador PEM.html   <- abrir este (duplo clique em qualquer navegador)
-├── estilo.css               <- visual (tema claro/escuro automatico)
-├── nucleo.js                <- parser ASN.1/DER, OIDs, interpretadores, cripto (sem DOM)
-├── interface.js             <- renderizacao dos cards e eventos da pagina
-└── Decodificador PEM.md     <- esta nota
-```
 
 Abrir o `Decodificador PEM.html` com duplo clique. Funciona offline; os quatro
 arquivos precisam ficar na mesma pasta (o HTML referencia os outros por caminho
@@ -85,8 +66,7 @@ codificacao, nao criptografia. A pagina decodifica o base64 e percorre o DER
 sem bibliotecas externas. A interpretacao segue as estruturas das RFCs 2986
 (PKCS#10), 5280 (X.509/CRL), 5208/5958 (PKCS#8) e 8018 (PBES2).
 
-Equivalente em linha de comando (nota original do lab, pasta
-`4 - PKI Engineering Lab/SSL em geral/Decodificando CSR`):
+
 
 ```
 openssl req -in mycsr.csr -noout -text
@@ -94,11 +74,6 @@ openssl req -in mycsr.csr -noout -text
 
 ## Validacao realizada (2026-07-17)
 
-Testado contra vetores gerados com OpenSSL 3.x local (`C:\OpenSSL\mingw64`):
-CSR RSA 2048 com SANs, CSR ECDSA P-256, certificado autoassinado, chaves
-PKCS#8/PKCS#1/SEC1, chave criptografada AES-256-CBC (senha correta e
-incorreta) e P7B. Saida conferida campo a campo com `openssl req/x509 -text`;
-assinaturas validadas com resultado identico ao `-verify` do openssl.
 
 ## Limitacoes conhecidas
 
